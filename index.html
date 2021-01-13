@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>To-Do App Godel</title>
+    <link rel="stylesheet" href="main.css">
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Lato:wght@100&display=swap" rel="stylesheet">
+</head>
+<body>
+    <header class="header">
+        <a href="#" class="header__logo">
+            <h1 class="header__titile">todos
+            </h1>
+        </a>
+    </header>
+    <main>
+        <div class="container">
+            <span class="custom-arrow"></span>
+            <div class="container__add-task">
+                <form action="">
+                    <input 
+                    type="text"
+                    class="new-tast" 
+                    placeholder="What need to be done?"
+                    aria-label="What need to be done?">
+                </form>
+            </div>
+            <div class="container__tasks">
+                <input 
+                  type="checkbox"
+                  id="task-1"
+                />
+                <label for="task-1">
+                  <span class="custom-checkbox"></span>
+                  New task 1
+                </label>
+              </div>
+              <div class="container__tasks">
+                <input 
+                  type="checkbox"
+                  id="task-2"
+                />
+                <label for="task-2">
+                  <span class="custom-checkbox"></span>
+                  New task 2
+                </label>
+              </div>
+              <div class="container__tasks">
+                <input 
+                  type="checkbox"
+                  id="task-3"
+                />
+                <label for="task-3">
+                  <span class="custom-checkbox"></span>
+                  New task 3
+                </label>
+              </div>
+              <div class="container__bottom">
+                  <div class="container__bottom-left">2 2 left</div>
+                  <div class="conainer__bottom-status">
+                      <a href="#">All</a>
+                      <a href="#">Active</a>
+                      <a href="#">Completed</a>
+                  </div>
+                  <div class="container__bottom-clear">Clear</div>
+              </div>
+    </main>
+</body>
+</html>
