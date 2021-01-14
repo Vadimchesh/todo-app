@@ -30,14 +30,14 @@ body {
     background-color: #f5f5f5;
 }
 
-.header__titile {
+h1 {
     color: #e8d9d8;
     font-size: 138px;
     display: flex;
     justify-content: center;
   }
 
-.container {
+.content {
     max-width: 1280px;
     margin: 0 auto;
     justify-content: center;
@@ -57,43 +57,7 @@ body {
     -webkit-box-shadow: inset 0px -2px 8px -4px rgba(0,0,0,0.13); 
     box-shadow: inset 0px -2px 8px -4px rgba(0,0,0,0.13);
   }
-  
-  .container__tasks {
-    border-bottom: 2px solid #e6e6e6;
-    padding: 40px;
-    cursor: pointer;
-}
-  .radio__fake {
-      display: inline-block;
-      width: 40px;
-      height: 40px;
-      border: 2px solid #e6e6e6;
-      border-radius: 50%;
-      vertical-align: bottom;
-  }
 
-  .radio__real {
-
-  }
-
-  .radio__real:checked + .radio__fake::before {
-    display: inline-block;
-    width: 40px;
-    height: 40px;
-    border: 2px solid #e6e6e6;
-    border-radius: 50%;
-    vertical-align: bottom;
-
-}
-.radio__real {
-    width: 1px;
-    height: 1px;
-    position: absolute;
-    opacity: 0;
-    appearance: none;
-}
-
-  
 .container__add-task, input {
     border: 0px;
 }
@@ -105,7 +69,69 @@ body {
     width: 100%;
   }
 
-  .container__bottom {
+.container {
+    position: relative;
+    cursor: pointer;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+    border-bottom: 2px solid #e6e6e6;
+    display: flex;
+    align-items: center;
+    padding: 20px;
+  }
+  
+  .container input {
+    position: absolute;
+    opacity: 0;
+    cursor: pointer;
+    height: 0;
+    width: 0;
+  }
+  
+  .checkmark {
+    position: relative;
+    margin-right: 1rem;
+    background-color: #fff;
+    border: 1px solid #ccc;
+    border-radius: 50%;
+    height: 1.75rem;
+    width: 1.75rem;
+  }
+  
+  .container:hover input ~ .checkmark {
+    background-color: rgb(243, 241, 241);
+  }
+  
+.container input:checked ~ .checkmark {
+    border-color: #66BB6A;
+  }
+
+.container input[type="checkbox"]:checked ~ span {
+    text-decoration: line-through;
+    color: #C8C8C8;
+}
+  
+  .checkmark:after {
+    content: "";
+    position: absolute;
+    top: 0.5rem;
+    left: 0.45rem;
+    opacity: 0;
+    border: 2px solid #FFFFFF;
+    border-top: none;
+    border-right: none;
+    transform: rotate(-45deg);
+    width: 0.75rem;
+    height: 0.375rem;
+  }
+  
+  .container input[type="checkbox"]:checked + .checkmark:after {
+    opacity: 1;
+    border-color: #66BB6A;
+}
+.container__bottom {
     font-size: 20px;
     display: flex;
     justify-content: space-between;
@@ -114,12 +140,6 @@ body {
 
 .conainer__bottom-status, a {
     padding: 0 20px;
-}
-
-.bottom__first {
-    border: 1px solid #e8d9d8;
-    border-radius: 5px;
-    padding: 5px;
 }
 
 .bottom__card1 {
