@@ -31,10 +31,10 @@ body {
 }
 
 h1 {
-    color: #e8d9d8;
-    font-size: 138px;
     display: flex;
     justify-content: center;
+    color: #e8d9d8;
+    font-size: 138px;
   }
 
 .content {
