@@ -4,15 +4,24 @@ function TodoControls () {
 
 return (
 
-<div class="container__bottom">
-                  <div class="container__bottom-left">2 2 left</div>
-                  <div class="conainer__bottom-status">
-                      <a href="#" class="bottom__first">All</a>
-                      <a href="#">Active</a>
-                      <a href="#">Completed</a>
-                  </div>
-                  <div class="container__bottom-clear">Clear completed</div>
-              </div> 
+<div className="container__bottom">
+    <label className="container__bottom-left">2 2 left</label>
+    <div className="conainer__bottom-status">
+        <label className="bottom__first">
+            <input type="radio" name='bottom'/>
+            <span>All</span>
+        </label>
+        <label>
+            <input type="radio" checked name='bottom' />
+            <span>Active</span>
+        </label>
+        <label>
+            <input type="radio" name='bottom'/>
+            <span>Completed</span>
+        </label>
+    </div>
+    <label className="container__bottom-clear">Clear completed</label>
+</div> 
 )
 }
 

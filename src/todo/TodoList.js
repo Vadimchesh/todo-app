@@ -10,11 +10,11 @@ const styles = {
 }
 function TodoList(props) {
     return (
-        <ul style={styles.container}>    
+        <div style={styles.container}>    
             {props.todos.map((todo, index) => {
                 return <TodoItem todo={todo} index={index} key={todo.id} onChange={props.onToggle}></TodoItem>
             }) }
-        </ul>
+        </div>
     )
 }
 

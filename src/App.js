@@ -25,11 +25,12 @@ function toggleTodo (id) {
     <div className="wrapper">
       <h1>todos</h1>
       <div className="content">
+        <TodoAdd />
         <TodoList todos={todos} onToggle={toggleTodo}></TodoList>
         <TodoControls />
       </div>
-      <div class="bottom__card1"></div>
-      <div class="bottom__card2"></div>
+      <div className="bottom__card1" />
+      <div className="bottom__card2" />
     </div>
   )
 }

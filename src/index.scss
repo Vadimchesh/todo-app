@@ -18,6 +18,7 @@ h1 {
   color: #e8d9d8;
   font-size: 5rem;
   font-weight: 100;
+  margin-bottom: 1rem;
 }
 
 code {
@@ -42,16 +43,38 @@ code {
   box-shadow: 0px -2px 16px -6px rgba(0,0,0,0.64);
 }
 .container__add-task {
-  padding: 40px;
-  border-bottom: 2px solid #e6e6e6;
   height: 120px;
   background-color: #fefefe;
   -webkit-box-shadow: inset 0px -2px 8px -4px rgba(0,0,0,0.13); 
   box-shadow: inset 0px -2px 8px -4px rgba(0,0,0,0.13);
 }
 
+.container__add-task label {
+  position: relative;
+}
+
+.arrow {
+  position: absolute;
+  top: 0%;
+  width: 20px;
+  height: 20px;
+  transition: .3s;
+  box-shadow: -3px 3px 0 rgba(0,0,0,.5);
+  border: none;
+  background-color: transparent;
+  outline: none;
+  cursor: pointer;
+  transition: 0.5s;
+}
+
+.arrow{
+  transform: rotate(-45deg);
+}
+
 .container__add-task, input {
   border: 0px;
+  padding: 20px;
+  outline: none;
 }
 
 .new-task {
@@ -62,7 +85,7 @@ code {
 }
 
 .container {
-     position: relative;
+    position: relative;
     cursor: pointer;
     -webkit-user-select: none;
     -moz-user-select: none;
@@ -83,11 +106,16 @@ code {
     height: 1.75rem;
     width: 1.75rem;
 }
-.button  {
-  background-color: antiquewhite;
-  color: #fff;
-  border: none;
+
+.container input {
+  position: absolute;
+  margin-right: 1rem;
+  opacity: 0;
+  cursor: pointer;
+  height: 0;
+  width: 0;
 }
+
 .container:hover input ~ .checkmark {
   background-color: rgb(243, 241, 241);
 }
@@ -121,29 +149,24 @@ code {
 }
 
 .container__bottom {
-    font-size: 20px;
-    display: flex;
-    justify-content: space-between;
-    padding: 28px;
-  }
-
-.conainer__bottom-status, a {
-    padding: 0 20px;
+  display: flex;
+  justify-content: space-between;
+  padding: 28px;
+  font-size: 20px;
 }
 
-.bottom__card1 {
-    width: 79%;
-    height: 10px;
-    box-shadow: 0 0 3px rgba(0,0,0,0.5);
-    margin: 0px auto;
+.conainer__bottom-status label {
+  padding: 10px;
+  cursor: pointer;
+}
+.conainer__bottom-status input[type='radio'] {
+  display: none;
+}
+.conainer__bottom-status input[type='radio']:checked + span {
+  padding: 0.2rem;
+  border: 1px solid #EBD8D7;
 }
 
-.bottom__card2 {
-    width: 78%;
-    height: 10px;
-    box-shadow: 0 0 3px rgba(0,0,0,0.5);
-    margin: 0px auto 50px;
-}
 .bottom__card1 {
   width: 79%;
   height: 10px;
