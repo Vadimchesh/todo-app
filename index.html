@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>To-Do App Godel</title>
+    <link rel="stylesheet" href="main.css">
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,100;1,100&display=swap" rel="stylesheet"> 
+</head>
+<body>
+            <h1 class="header__titile">todos</h1>
+    <main>
+        <div class="content">
+            <div class="container__add-task">
+                <span class="custom-arrow"></span>
+                <form action="">
+                    <input 
+                    type="text"
+                    class="new-task" 
+                    placeholder="What need to be done?"
+                    aria-label="What need to be done?">
+                </form>
+            </div>
+                <label class="container">
+                    <input type="checkbox" checked="checked">
+                    <span class="checkmark"></span>
+                    <span>New task 1</span>
+                </label>
+                <label class="container">
+                    <input type="checkbox">
+                    <span class="checkmark"></span>
+                    <span>New task 2</span>
+                </label>
+                <label class="container">
+                    <input type="checkbox">
+                    <span class="checkmark"></span>
+                    <span>New task 3</span>
+                </label>
+              <div class="container__bottom">
+                  <div class="container__bottom-left">2 2 left</div>
+                  <div class="conainer__bottom-status">
+                      <a href="#" class="bottom__first">All</a>
+                      <a href="#">Active</a>
+                      <a href="#">Completed</a>
+                  </div>
+                  <div class="container__bottom-clear">Clear completed</div>
+              </div> 
+        </div> 
+        <div class="bottom__card1"></div>
+        <div class="bottom__card2"></div>   
+    </main>
+</body>
+</html>
