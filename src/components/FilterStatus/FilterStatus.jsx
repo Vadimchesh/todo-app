@@ -1,18 +1,18 @@
 import React from "react";
 import styles from "./style.module.scss";
 
-function TodoFilter() {
+function FilterStatus() {
   return (
     <div className={styles.container}>
-      <label>
+      <label className={styles.label}>
         <input type="radio" name="bottom" />
         <span>All</span>
       </label>
-      <label>
+      <label className={styles.label}>
         <input type="radio" checked name="bottom" />
         <span>Active</span>
       </label>
-      <label>
+      <label className={styles.label}>
         <input type="radio" name="bottom" />
         <span>Completed</span>
       </label>
@@ -20,4 +20,4 @@ function TodoFilter() {
   );
 }
 
-export default TodoFilter;
+export default FilterStatus;

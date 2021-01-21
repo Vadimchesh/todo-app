@@ -1,28 +1,28 @@
 import React from "react";
-import TodoItem from "../item/Item";
+import Task from "../Task/Task";
 import PropTypes from "prop-types";
 import styles from "./style.module.scss";
 
-function TodoList(props) {
+function ListTask(props) {
   return (
     <div className={styles.container}>
       {props.todos.map((todo, index) => {
         return (
-          <TodoItem
+          <Task
             todo={todo}
             index={index}
             key={todo.id}
             onChange={props.onToggle}
-          ></TodoItem>
+          ></Task>
         );
       })}
     </div>
   );
 }
 
-TodoList.propTypes = {
+ListTask.propTypes = {
   todos: PropTypes.arrayOf(PropTypes.object),
   onToggle: PropTypes.func.isRequired,
 };
 
-export default TodoList;
+export default ListTask;

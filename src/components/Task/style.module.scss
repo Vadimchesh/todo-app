@@ -12,19 +12,19 @@
     cursor: pointer;
     height: 0;
     width: 0;
+    &:checked + .checkmark:after {
+      opacity: 1;
+      border-color: $done-color;
+    }
     &:checked ~ .checkmark {
       border-color: #66bb6a;
-      &:checked + .checkmark:after {
-        opacity: 1;
-        border-color: $done-color;
-      }
     }
   }
 }
 .checkmark {
   position: relative;
   margin-right: 1rem;
-  background-color: #fff;
+  background-color: rgb(252, 252, 252);
   border: 1px solid #ccc;
   border-radius: 50%;
   height: 1.75rem;
@@ -35,7 +35,7 @@
     top: 0.5rem;
     left: 0.45rem;
     opacity: 0;
-    border: 2px solid #ffffff;
+    border: 2px solid #e61f1f;
     border-top: none;
     border-right: none;
     transform: rotate(-45deg);

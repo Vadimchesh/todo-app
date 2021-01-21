@@ -1,7 +1,7 @@
 import React from "react";
-import TodoList from "../list/List";
-import TodoControls from "../controls/Controls";
-import TodoAdd from "../add/Add";
+import ListTask from "./components/ListTask/ListTask";
+import BottomControls from "./components/BottomControls//BottomControls";
+import AddTask from "./components/AddTask/AddTask";
 import styles from "./style.module.scss";
 
 function App() {
@@ -26,9 +26,9 @@ function App() {
     <div className={styles.wrapper}>
       <h1>todos</h1>
       <div className={styles.content}>
-        <TodoAdd />
-        <TodoList todos={todos} onToggle={toggleTodo}></TodoList>
-        <TodoControls />
+        <AddTask />
+        <ListTask todos={todos} onToggle={toggleTodo}></ListTask>
+        <BottomControls />
       </div>
       <div className={styles.card1} />
       <div className={styles.card2} />

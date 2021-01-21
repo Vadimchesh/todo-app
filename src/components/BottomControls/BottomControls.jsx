@@ -1,15 +1,15 @@
 import React from "react";
-import TodoFilter from "../filter/Filter";
+import FilterStatus from "../FilterStatus/FilterStatus";
 import styles from "./style.module.scss";
 
-function TodoControls() {
+function BottomControls() {
   return (
     <div className={styles.container}>
       <label>2 2 left</label>
-      <TodoFilter />
+      <FilterStatus />
       <label>Clear completed</label>
     </div>
   );
 }
 
-export default TodoControls;
+export default BottomControls;
