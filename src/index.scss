@@ -1,27 +1,5 @@
-@import url('https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,100;1,100&display=swap');
-
-//main mixins
-@mixin flex-center {
-  display: flex;
-  justify-content: center;
-  align-content: center;
-}
-
-@mixin bottom-card {
-  height: 10px;
-  box-shadow: 0 0 3px rgba(0,0,0,0.5);
-  background-color: $white-color;
-}
-
-// main props
-$main-width : 70%;
-$main-font: 'Lato', sans-serif;
-
-// colors
-$primaty-color: #f5f5f5;
-$white-color: #fff;
-$gray-color: rgb(192, 192, 192);
-$red-color: #e8d9d8;
+@import url("https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,100;1,100&display=swap");
+@import "/todo/scss/variables.module.scss";
 
 * {
   box-sizing: border-box;
@@ -53,133 +31,19 @@ h1 {
   margin: 0 auto;
   width: $main-width;
   max-width: 1280px;
-  font-size: 35px;
+  font-size: $main-size;
   background-color: $white-color;
-  box-shadow: 0px -2px 16px -6px rgba(0,0,0,0.64);
-}
-
-.container {
-  display: flex;
-  align-items: center;
-  padding: 20px;
-  cursor: pointer;
-  user-select: none;
-  border-bottom: 2px solid #e6e6e6;
-
-  &__add-task {
-    height: 120px;
-    -webkit-box-shadow: inset 0px -2px 8px -4px rgba(0,0,0,0.13); 
-    box-shadow: inset 0px -2px 8px -4px rgba(0,0,0,0.13);
-    label {
-      position: relative;
-    }
-  }  
-}
-
-.arrow {
-  position: absolute;
-  top: 0%;
-  width: 20px;
-  height: 20px;
-  outline: none;
-  border: none;
-  background-color: transparent;
-  box-shadow: -3px 3px 0 rgba(0,0,0,.5);
-  transform: rotate(-45deg);
-}
-
-.container__add-task, input {
-  border: 0px;
-  padding: 20px 30px;
-  outline: none;
-}
-
-.new-task {
-  font-size: 35px;
-  font-style: italic;
-  font-family: $main-font;
-  color: $gray-color;
-  width: 100%;
-}
-
-.checkmark {
-    position: relative;
-    margin-right: 1rem;
-    background-color: #fff;
-    border: 1px solid #ccc;
-    border-radius: 50%;
-    height: 1.75rem;
-    width: 1.75rem;
-}
-
-.container input {
-  position: absolute;
-  margin-right: 1rem;
-  opacity: 0;
-  cursor: pointer;
-  height: 0;
-  width: 0;
-}
-
-.container:hover input ~ .checkmark {
-  background-color: rgb(243, 241, 241);
-}
-
-.container input:checked ~ .checkmark {
-  border-color: #66BB6A;
-}
-
-.checkmark:after {
-  content: "";
-  position: absolute;
-  top: 0.5rem;
-  left: 0.45rem;
-  opacity: 0;
-  border: 2px solid #FFFFFF;
-  border-top: none;
-  border-right: none;
-  transform: rotate(-45deg);
-  width: 0.75rem;
-  height: 0.375rem;
-}
-
-.container input[type="checkbox"]:checked + .checkmark:after {
-  opacity: 1;
-  border-color: #66BB6A;
-}
-
-.done {
-  text-decoration: line-through;
-  color: #C8C8C8;
-}
-
-.container__bottom {
-  display: flex;
-  justify-content: space-between;
-  padding: 28px;
-  font-size: 20px;
-}
-
-.conainer__bottom-status label {
-  padding: 10px;
-  cursor: pointer;
-}
-.conainer__bottom-status input[type='radio'] {
-  display: none;
-}
-.conainer__bottom-status input[type='radio']:checked + span {
-  padding: 0.2rem;
-  border: 1px solid #EBD8D7;
+  box-shadow: 0px -2px 16px -6px rgba(0, 0, 0, 0.64);
 }
 
 .bottom__card1 {
   @include bottom-card;
-  width: calc(#{$main-width} - 1%);
-  margin: 0px auto;
+  width: $main-width * 0.98;
+  margin: 0 auto;
 }
 
 .bottom__card2 {
   @include bottom-card;
-  width: calc(#{$main-width} - 2%);
-  margin: 0px auto 50px;
+  width: $main-width * 0.95;
+  margin: 0 auto 3rem;
 }
