@@ -17,7 +17,7 @@
       border-color: $done-color;
     }
     &:checked ~ .checkmark {
-      border-color: #66bb6a;
+      border-color: $done-color;
     }
   }
 }
@@ -25,7 +25,7 @@
   position: relative;
   margin-right: 1rem;
   background-color: rgb(252, 252, 252);
-  border: 1px solid #ccc;
+  border: 1px solid $gray-color;
   border-radius: 50%;
   height: 1.75rem;
   width: 1.75rem;
@@ -35,7 +35,7 @@
     top: 0.5rem;
     left: 0.45rem;
     opacity: 0;
-    border: 2px solid #e61f1f;
+    border: 2px solid $done-color;
     border-top: none;
     border-right: none;
     transform: rotate(-45deg);
