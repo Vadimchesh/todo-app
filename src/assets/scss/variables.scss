@@ -20,6 +20,14 @@
   user-select: none;
   border-bottom: 2px solid #e6e6e6;
 }
+// @mixin h1 {
+//   @include flex-center;
+//   margin-bottom: 1rem;
+//   font-size: 7rem;
+//   font-weight: 100;
+//   color: $red-color;
+// }
+
 // main props
 $main-width: 70%;
 $main-font: "Lato", sans-serif;

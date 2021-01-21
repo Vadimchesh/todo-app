@@ -1,6 +1,6 @@
 import React from "react";
-import TodoFilter from "./TodoFilter";
-import styles from "./Controls.module.scss";
+import TodoFilter from "../filter/Filter";
+import styles from "./style.module.scss";
 
 function TodoControls() {
   return (

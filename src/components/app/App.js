@@ -1,7 +1,8 @@
 import React from "react";
-import TodoList from "./todo/TodoList";
-import TodoControls from "./todo/TodoControls";
-import TodoAdd from "./todo/TodoAdd";
+import TodoList from "../list/List";
+import TodoControls from "../controls/Controls";
+import TodoAdd from "../add/Add";
+import styles from "./style.module.scss";
 
 function App() {
   const [todos, setTodos] = React.useState([
@@ -22,15 +23,15 @@ function App() {
   }
 
   return (
-    <div className="wrapper">
+    <div className={styles.wrapper}>
       <h1>todos</h1>
-      <div className="content">
+      <div className={styles.content}>
         <TodoAdd />
         <TodoList todos={todos} onToggle={toggleTodo}></TodoList>
         <TodoControls />
       </div>
-      <div className="bottom__card1" />
-      <div className="bottom__card2" />
+      <div className={styles.card1} />
+      <div className={styles.card2} />
     </div>
   );
 }

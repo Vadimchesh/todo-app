@@ -1,6 +1,6 @@
 import React from "react";
 import PropTypes from "prop-types";
-import styles from "./Item.module.scss";
+import styles from "./style.module.scss";
 
 function TodoItem({ todo, onChange }) {
   const classes = [];

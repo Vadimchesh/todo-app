@@ -1,5 +1,5 @@
 import React from "react";
-import styles from "./Add.module.scss";
+import styles from "./style.module.scss";
 
 function TodoAdd() {
   return (
