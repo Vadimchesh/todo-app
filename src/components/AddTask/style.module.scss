@@ -1,0 +1,29 @@
+@import "../../assets/scss/variables.scss";
+
+.container {
+  @include container;
+  position: relative;
+  box-shadow: inset 0px -2px 8px -4px rgba(0, 0, 0, 0.13);
+}
+.container input {
+  font-size: $main-size;
+  font-style: italic;
+  font-family: $main-font;
+  color: $gray-color;
+  width: 100%;
+  border: 0px;
+  padding-left: 2.5rem;
+  outline: none;
+}
+
+.arrow {
+  position: absolute;
+  top: 30%;
+  width: 1.2rem;
+  height: 1.2rem;
+  outline: none;
+  border: none;
+  background-color: transparent;
+  box-shadow: -3px 3px 0 rgba(0, 0, 0, 0.5);
+  transform: rotate(-45deg);
+}

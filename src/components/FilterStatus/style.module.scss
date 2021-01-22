@@ -1,0 +1,19 @@
+@import "../../assets/scss/variables.scss";
+
+.conainer {
+  padding: 0.5rem;
+  cursor: pointer;
+}
+.label {
+  cursor: pointer;
+  padding: 0 1rem;
+}
+.label input {
+  display: none;
+  padding: 1rem;
+
+  &:checked + span {
+    padding: 0.2rem;
+    border: 1px solid $red-color;
+  }
+}

@@ -1,4 +1,10 @@
-#P1: TODO APP 
-HI, my name is Vadzim Lindo. This is my frist project for Godel.
-**Stack:** HTML, CSS, SASS, REACT, REDUX, LocalStorage, CI/CD, ESLint, MockAPI
-**AdvancedStack:** Jest, Mocha, GitHubActions
+
+# Todo app with Create React App
+My name is Vadzim Lindo and i introduce my first React App a simple Todo app example with **undelete** 
+
+## Stack
+
+- HTML
+- React
+- SASS
+- React Router
