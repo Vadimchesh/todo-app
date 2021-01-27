@@ -1,13 +1,20 @@
 import React from "react";
-import ReactDOM from "react-dom";
+import { render } from "react-dom";
+import configureStore from "./redux/store";
+import { Provider } from "react-redux";
 import "./assets/scss/common.scss";
 import App from "./App";
 import reportWebVitals from "./reportWebVitals";
 
-ReactDOM.render(
-  <React.StrictMode>
+let initialState = {
+  todos: [],
+};
+let store = configureStore(initialState);
+
+render(
+  <Provider store={store}>
     <App />
-  </React.StrictMode>,
+  </Provider>,
   document.getElementById("root")
 );
 
