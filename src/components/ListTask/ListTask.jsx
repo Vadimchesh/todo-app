@@ -1,21 +1,18 @@
-import React, { Component } from "react";
-import Task from "../Task/Task";
 import styles from "./style.module.scss";
+import React from "react";
+import { useSelector, shallowEqual } from "react-redux";
+import Task from "../Task/Task";
 
-class ListTask extends Component {
-  render() {
-    return (
-      <div className={styles.container}>
-        {this.props.todos.map((todo) => {
-          if (todo.display === true) {
-            return (
-              <Task key={todo.id} todo={todo} actions={this.props.actions} />
-            );
-          }
-        })}
-      </div>
-    );
-  }
-}
+const selectTodoIds = (state) => state.todos.map((todo) => todo.id);
+
+const ListTask = () => {
+  const todoIds = useSelector(selectTodoIds, shallowEqual);
+
+  const renderedListTasks = todoIds.map((todoId) => {
+    return <Task key={todoId} id={todoId} />;
+  });
+
+  return <div className={styles.container}>{renderedListTasks}</div>;
+};
 
 export default ListTask;

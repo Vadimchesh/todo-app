@@ -1,42 +1,33 @@
-import React, { Component } from "react";
+import React, { useState } from "react";
+import { useDispatch } from "react-redux";
 import styles from "./style.module.scss";
 
-class AddTask extends Component {
-  constructor(props) {
-    super(props);
-    this.state = {
-      title: "",
-    };
-  }
-  handleTitleChange(event) {
-    console.log(event);
-    this.setState({
-      title: event.target.value,
-    });
-  }
-  handleSubmit(event) {
-    event.preventDefault();
-    if (this.state.title !== "") {
-      this.props.addTodo(this.state.title);
-      //reset input box
-      this.setState({
-        title: "",
-      });
+const AddTask = () => {
+  const [text, setText] = useState("");
+  const dispatch = useDispatch();
+
+  const handleChange = (e) => setText(e.target.value);
+
+  const handleKeyDown = (e) => {
+    const trimmedText = text.trim();
+    if (e.which === 13 && trimmedText) {
+      dispatch({ type: "todos/todoAdded", payload: trimmedText });
+      setText("");
     }
-  }
-  render() {
-    return (
-      <div className={styles.container}>
-        <span className={styles.arrow} />
-        <input
-          type="text"
-          placeholder="title.."
-          required={true}
-          value={this.state.title}
-          onChange={this.handleTitleChange.bind(this)}
-        />
-      </div>
-    );
-  }
-}
+  };
+
+  return (
+    <div className={styles.container}>
+      <span className={styles.arrow} />
+      <input
+        className="new-todo"
+        placeholder="What needs to be done?"
+        value={text}
+        onChange={handleChange}
+        onKeyDown={handleKeyDown}
+      />
+    </div>
+  );
+};
+
 export default AddTask;

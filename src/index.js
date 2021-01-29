@@ -1,15 +1,10 @@
 import React from "react";
 import { render } from "react-dom";
-import configureStore from "./redux/store";
 import { Provider } from "react-redux";
 import "./assets/scss/common.scss";
 import App from "./App";
 import reportWebVitals from "./reportWebVitals";
-
-let initialState = {
-  todos: [],
-};
-let store = configureStore(initialState);
+import store from "./redux/store";
 
 render(
   <Provider store={store}>

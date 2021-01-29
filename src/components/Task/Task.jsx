@@ -1,73 +1,47 @@
-import React, { Component } from "react";
+import React from "react";
 import styles from "./style.module.scss";
 import cn from "classnames";
+import { useSelector, useDispatch } from "react-redux";
 
-class Task extends Component {
-  constructor(props) {
-    super(props);
-    this.state = {
-      title: this.props.todo.title,
-      completed: this.props.todo.completed,
-    };
-  }
-  handleComplete() {
-    this.props.actions.completeTodo(this.props.todo.id);
-    this.setState({
-      checked: !this.state.checked,
-    });
-  }
-  handleDelete() {
-    this.props.actions.deleteTodo(this.props.todo.id);
-  }
-  handleEdit() {
-    this.props.actions.editTodo(this.props.todo.id);
-  }
-  handleUpdate() {
-    if (this.state.title !== "") {
-      this.props.actions.updateTodo(this.props.todo.id, this.state.title);
-    }
-  }
-  handleTitleChange(event) {
-    this.setState({
-      title: event.target.value,
-    });
-  }
-  handleDescriptionChange(event) {
-    this.setState({
-      description: event.target.value,
-    });
-  }
-  handleDueDateChange(event) {
-    console.log(event);
-    this.setState({
-      dueDate: event,
-    });
-  }
-  handleFocusChange(event) {
-    console.log(event);
-    this.setState({
-      focused: event.focused,
-    });
-  }
-  render() {
-    return (
-      <label className={styles.container}>
+const selectTodoById = (state, todoId) => {
+  return state.todos.find((todo) => todo.id === todoId);
+};
+
+const TodoListItem = ({ id }) => {
+  const todo = useSelector((state) => selectTodoById(state, id));
+  const { text, completed } = todo;
+
+  const dispatch = useDispatch();
+
+  const handleCompletedChanged = () => {
+    dispatch({ type: "todos/todoToggled", payload: todo.id });
+  };
+
+  const onDelete = () => {
+    dispatch({ type: "todos/todoDeleted", payload: todo.id });
+  };
+
+  return (
+    <label className={styles.label}>
+      <div className={styles.container}>
         <input
+          className="toggle"
           type="checkbox"
-          defaultChecked={this.state.completed}
-          required={true}
-          onClick={this.handleComplete.bind(this)}
+          checked={completed}
+          onChange={handleCompletedChanged}
         />
+        <span className={styles.checkmark}></span>
         <span
           className={cn({
-            [styles.done]: this.state.complited,
+            [styles.done]: todo.completed,
           })}
         >
-          {this.state.title}
+          {text}
         </span>
-        <button onClick={this.handleDelete.bind(this)}>Delete</button>
-      </label>
-    );
-  }
-}
-export default Task;
+      </div>
+      <button className={styles.del} onClick={onDelete}></button>
+    </label>
+  );
+};
+
+export default TodoListItem;

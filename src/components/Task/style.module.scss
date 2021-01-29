@@ -48,3 +48,14 @@
   text-decoration: line-through;
   color: $gray-color;
 }
+
+.del {
+  position: absolute;
+  height: 2rem;
+  width: 2rem;
+  top: 1.3rem;
+}
+
+.label {
+  position: relative;
+}
