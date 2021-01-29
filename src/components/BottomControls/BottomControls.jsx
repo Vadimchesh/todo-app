@@ -1,7 +1,3 @@
-// import React from "react";
-// import FilterStatus from "../FilterStatus/FilterStatus";
-// import styles from "./style.module.scss";
-
 import React from "react";
 import { useSelector, useDispatch } from "react-redux";
 import { StatusFilters } from "../../redux/reducerFilter";

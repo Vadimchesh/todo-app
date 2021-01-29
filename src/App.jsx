@@ -1,5 +1,4 @@
 import ListTask from "./components/ListTask/ListTask";
-// import BottomControls from "./components/BottomControls//BottomControls";
 import AddTask from "./components/AddTask/AddTask";
 import styles from "./style.module.scss";
 import BottomControls from "./components/BottomControls/BottomControls";
