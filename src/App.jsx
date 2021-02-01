@@ -1,7 +1,7 @@
-import ListTask from "./components/ListTask/ListTask";
-import AddTask from "./components/AddTask/AddTask";
-import styles from "./style.module.scss";
-import BottomControls from "./components/BottomControls/BottomControls";
+import ListTask from './components/ListTask/ListTask';
+import AddTask from './components/AddTask/AddTask';
+import Footer from './components/Footer/Footer';
+import styles from './style.module.scss';
 
 function App() {
   return (
@@ -10,7 +10,7 @@ function App() {
       <div className={styles.content}>
         <AddTask />
         <ListTask />
-        <BottomControls />
+        <Footer />
       </div>
       <div className={styles.card1} />
       <div className={styles.card2} />
