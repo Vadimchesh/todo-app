@@ -1,23 +1,26 @@
-const initialState = [{ id: 0, text: "Task Godel", completed: true }];
+import { v4 } from 'uuid';
 
-function nextTodoId(todos) {
-  const maxId = todos.reduce((maxId, todo) => Math.max(todo.id, maxId), -1);
-  return maxId + 1;
-}
+const initialState = [{ id: 0, text: 'Task Godel', completed: true }];
+
+// function nextTodoId(todos) {
+//   const maxId = todos.reduce((maxId, todo) => Math.max(todo.id, maxId), -1);
+//   return maxId + 1;
+// }
 
 export default function todosReducer(state = initialState, action) {
   switch (action.type) {
-    case "todos/todoAdded": {
+    case 'todos/todoAdded': {
       return [
         ...state,
         {
-          id: nextTodoId(state),
+          // id: nextTodoId(state),
+          id: v4(),
           text: action.payload,
           completed: false,
         },
       ];
     }
-    case "todos/todoToggled": {
+    case 'todos/todoToggled': {
       return state.map((todo) => {
         if (todo.id !== action.payload) {
           return todo;
@@ -29,15 +32,15 @@ export default function todosReducer(state = initialState, action) {
         };
       });
     }
-    case "todos/todoDeleted": {
+    case 'todos/todoDeleted': {
       return state.filter((todo) => todo.id !== action.payload);
     }
-    case "todos/allCompleted": {
+    case 'todos/allCompleted': {
       return state.map((todo) => {
         return { ...todo, completed: true };
       });
     }
-    case "todos/completedCleared": {
+    case 'todos/completedCleared': {
       return state.filter((todo) => !todo.completed);
     }
     default:
