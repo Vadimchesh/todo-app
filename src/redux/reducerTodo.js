@@ -4,7 +4,7 @@ const initialState = [{ id: 0, text: 'Task Godel', completed: true }];
 
 export default function todosReducer(state = initialState, action) {
   switch (action.type) {
-    case 'todos/todoAdded': {
+    case 'todos/todoAdd': {
       return [
         ...state,
         {
@@ -14,7 +14,7 @@ export default function todosReducer(state = initialState, action) {
         },
       ];
     }
-    case 'todos/todoToggled': {
+    case 'todos/todoToggle': {
       return state.map((todo) => {
         if (todo.id !== action.payload) {
           return todo;
@@ -26,15 +26,15 @@ export default function todosReducer(state = initialState, action) {
         };
       });
     }
-    case 'todos/todoDeleted': {
+    case 'todos/todoDelet': {
       return state.filter((todo) => todo.id !== action.payload);
     }
-    case 'todos/allCompleted': {
+    case 'todos/allComplet': {
       return state.map((todo) => {
         return { ...todo, completed: true };
       });
     }
-    case 'todos/completedCleared': {
+    case 'todos/completedClear': {
       return state.filter((todo) => !todo.completed);
     }
     default:

@@ -1,7 +1,7 @@
 export const StatusFilters = {
-  All: "all",
-  Active: "active",
-  Completed: "completed",
+  All: 'all',
+  Active: 'active',
+  Completed: 'completed',
 };
 
 const initialState = {
@@ -10,7 +10,7 @@ const initialState = {
 
 export default function filtersReducer(state = initialState, action) {
   switch (action.type) {
-    case "filters/statusFilterChanged": {
+    case 'filters/statusFilterChange': {
       return {
         ...state,
         status: action.payload,

@@ -15,7 +15,7 @@ const Footer = () => {
   const status = useSelector((state) => state.filters);
 
   const onStatusChange = (status) =>
-    dispatch({ type: 'filters/statusFilterChanged', payload: status });
+    dispatch({ type: 'filters/statusFilterChange', payload: status });
   return (
     <footer className={styles.container}>
       <RemainingTodos count={todosRemaining} />

@@ -1,9 +1,9 @@
-import React, { useState } from "react";
-import { useDispatch } from "react-redux";
-import styles from "./style.module.scss";
+import React, { useState } from 'react';
+import { useDispatch } from 'react-redux';
+import styles from './style.module.scss';
 
 const AddTask = () => {
-  const [text, setText] = useState("");
+  const [text, setText] = useState('');
   const dispatch = useDispatch();
 
   const handleChange = (e) => setText(e.target.value);
@@ -11,8 +11,8 @@ const AddTask = () => {
   const handleKeyDown = (e) => {
     const trimmedText = text.trim();
     if (e.which === 13 && trimmedText) {
-      dispatch({ type: "todos/todoAdded", payload: trimmedText });
-      setText("");
+      dispatch({ type: 'todos/todoAdd', payload: trimmedText });
+      setText('');
     }
   };
 
@@ -20,8 +20,8 @@ const AddTask = () => {
     <div className={styles.container}>
       <span className={styles.arrow} />
       <input
-        className="new-todo"
-        placeholder="What needs to be done?"
+        className='new-todo'
+        placeholder='What needs to be done?'
         value={text}
         onChange={handleChange}
         onKeyDown={handleKeyDown}

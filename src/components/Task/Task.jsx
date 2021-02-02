@@ -1,7 +1,7 @@
-import React from "react";
-import styles from "./style.module.scss";
-import cn from "classnames";
-import { useSelector, useDispatch } from "react-redux";
+import React from 'react';
+import styles from './style.module.scss';
+import cn from 'classnames';
+import { useSelector, useDispatch } from 'react-redux';
 
 const selectTodoById = (state, todoId) => {
   return state.todos.find((todo) => todo.id === todoId);
@@ -14,19 +14,19 @@ const TodoListItem = ({ id }) => {
   const dispatch = useDispatch();
 
   const handleCompletedChanged = () => {
-    dispatch({ type: "todos/todoToggled", payload: todo.id });
+    dispatch({ type: 'todos/todoToggle', payload: todo.id });
   };
 
   const onDelete = () => {
-    dispatch({ type: "todos/todoDeleted", payload: todo.id });
+    dispatch({ type: 'todos/todoDelet', payload: todo.id });
   };
 
   return (
     <label className={styles.label}>
       <div className={styles.container}>
         <input
-          className="toggle"
-          type="checkbox"
+          className='toggle'
+          type='checkbox'
           checked={completed}
           onChange={handleCompletedChanged}
         />
