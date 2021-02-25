@@ -3,26 +3,24 @@ import Task from "../Task/Task";
 import PropTypes from "prop-types";
 import styles from "./style.module.scss";
 
-function ListTask(props) {
-  return (
-    <div className={styles.container}>
-      {props.todos.map((todo, index) => {
-        return (
-          <Task
-            todo={todo}
-            index={index}
-            key={todo.id}
-            onChange={props.onToggle}
-          ></Task>
-        );
-      })}
-    </div>
-  );
-}
+const ListTask = ({ todos, toggleTodo }) => (
+  <div className={styles.container}>
+    {todos &&
+      todos.map((todo) => (
+        <Task key={todo.id} {...todo} onClick={() => toggleTodo(todo.id)} />
+      ))}
+  </div>
+);
 
 ListTask.propTypes = {
-  todos: PropTypes.arrayOf(PropTypes.object),
-  onToggle: PropTypes.func.isRequired,
+  todos: PropTypes.arrayOf(
+    PropTypes.shape({
+      id: PropTypes.number.isRequired,
+      completed: PropTypes.bool.isRequired,
+      text: PropTypes.string.isRequired,
+    }).isRequired
+  ).isRequired,
+  toggleTodo: PropTypes.func.isRequired,
 };
 
 export default ListTask;
