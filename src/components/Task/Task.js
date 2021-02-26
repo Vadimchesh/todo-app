@@ -1,24 +1,17 @@
 import React from 'react';
 import styles from './style.module.scss';
 import cn from 'classnames';
-import { useSelector, useDispatch } from 'react-redux';
+import { useDispatch } from 'react-redux';
 
-const selectTodoById = (state, todoId) => {
-  return state.todos.find((todo) => todo.id === todoId);
-};
-
-const TodoListItem = ({ id }) => {
-  const todo = useSelector((state) => selectTodoById(state, id));
-  const { text, completed } = todo;
-
+const TodoListItem = ({ id, text, completed }) => {
   const dispatch = useDispatch();
 
   const handleCompletedChanged = () => {
-    dispatch({ type: 'todos/todoToggle', payload: todo.id });
+    dispatch({ type: 'todos/todoToggle', payload: id });
   };
 
   const onDelete = () => {
-    dispatch({ type: 'todos/todoDelet', payload: todo.id });
+    dispatch({ type: 'todos/todoDelet', payload: id });
   };
 
   return (
@@ -33,13 +26,13 @@ const TodoListItem = ({ id }) => {
         <span className={styles.checkmark}></span>
         <span
           className={cn({
-            [styles.done]: todo.completed,
+            [styles.done]: completed,
           })}
         >
           {text}
         </span>
+        <span id='delete' className={styles.close} onClick={onDelete}></span>
       </div>
-      <button className={styles.del} onClick={onDelete}></button>
     </label>
   );
 };

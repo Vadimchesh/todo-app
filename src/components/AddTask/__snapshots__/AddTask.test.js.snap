@@ -1,0 +1,17 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Add Task: snapshot 1`] = `
+<div
+  className="container"
+>
+  <span
+    className="arrow"
+  />
+  <input
+    autoFocus={true}
+    className="new-todo"
+    onKeyDown={[Function]}
+    placeholder="What needs to be done?"
+  />
+</div>
+`;

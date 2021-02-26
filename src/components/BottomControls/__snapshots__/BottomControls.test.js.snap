@@ -1,0 +1,47 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`BottomControls: renders correctly 1`] = `
+<div
+  className="styles.conainer"
+>
+  <label
+    className="label"
+  >
+    <input
+      name="bottom"
+      type="radio"
+    />
+    <span
+      onClick={[Function]}
+    >
+      All
+    </span>
+  </label>
+  <label
+    className="label"
+  >
+    <input
+      name="bottom"
+      type="radio"
+    />
+    <span
+      onClick={[Function]}
+    >
+      Active
+    </span>
+  </label>
+  <label
+    className="label"
+  >
+    <input
+      name="bottom"
+      type="radio"
+    />
+    <span
+      onClick={[Function]}
+    >
+      Completed
+    </span>
+  </label>
+</div>
+`;

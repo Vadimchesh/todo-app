@@ -5,7 +5,7 @@ const RemainingTodos = ({ count }) => {
 
   return (
     <label>
-      {count} item{suffix} left{' '}
+      {count}item{suffix} left
     </label>
   );
 };

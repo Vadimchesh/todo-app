@@ -1,18 +1,14 @@
-import React, { useState } from 'react';
+import React from 'react';
 import { useDispatch } from 'react-redux';
 import styles from './style.module.scss';
 
 const AddTask = () => {
-  const [text, setText] = useState('');
   const dispatch = useDispatch();
-
-  const handleChange = (e) => setText(e.target.value);
-
   const handleKeyDown = (e) => {
-    const trimmedText = text.trim();
+    const trimmedText = e.target.value.trim();
     if (e.which === 13 && trimmedText) {
-      dispatch({ type: 'todos/todoAdd', payload: trimmedText });
-      setText('');
+      dispatch({ type: 'todoAdd', payload: trimmedText });
+      e.target.value = '';
     }
   };
 
@@ -20,10 +16,9 @@ const AddTask = () => {
     <div className={styles.container}>
       <span className={styles.arrow} />
       <input
+        autoFocus
         className='new-todo'
         placeholder='What needs to be done?'
-        value={text}
-        onChange={handleChange}
         onKeyDown={handleKeyDown}
       />
     </div>

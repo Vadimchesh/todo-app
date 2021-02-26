@@ -1,0 +1,28 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Task: snapshot 1`] = `
+<label
+  className="label"
+>
+  <div
+    className="container"
+  >
+    <input
+      className="toggle"
+      onChange={[Function]}
+      type="checkbox"
+    />
+    <span
+      className="checkmark"
+    />
+    <span
+      className=""
+    />
+    <span
+      className="close"
+      id="delete"
+      onClick={[Function]}
+    />
+  </div>
+</label>
+`;
