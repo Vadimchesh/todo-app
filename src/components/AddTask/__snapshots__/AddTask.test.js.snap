@@ -10,6 +10,7 @@ exports[`Add Task: snapshot 1`] = `
   <input
     autoFocus={true}
     className="new-todo"
+    data-cy="inputText"
     onKeyDown={[Function]}
     placeholder="What needs to be done?"
   />

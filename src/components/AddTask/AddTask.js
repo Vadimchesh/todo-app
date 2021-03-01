@@ -16,6 +16,7 @@ const AddTask = () => {
     <div className={styles.container}>
       <span className={styles.arrow} />
       <input
+        data-cy='inputText'
         autoFocus
         className='new-todo'
         placeholder='What needs to be done?'

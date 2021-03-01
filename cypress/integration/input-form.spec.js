@@ -7,7 +7,7 @@ describe('Input form', () => {
 
   describe('App initialization', () => {
     it('Loads todos on page load', () => {
-      cy.get('[data-cy=textTask]').should('have.length', 1);
+      cy.get('[data-cy="textTask"]').should('have.length', 1);
     });
   });
 
@@ -53,7 +53,7 @@ describe('Input form', () => {
       });
 
       it('Shows remaining todos in the footer', () => {
-        cy.get('[data-cy=cy-count]').should('contain', 3);
+        cy.get('[data-cy="cy-count"]').should('contain', 3);
       });
     });
   });

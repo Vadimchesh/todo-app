@@ -1,18 +1,20 @@
 import todosReducer from './reducerTodo';
 
+let initialState = [
+  {
+    text: 'Task Godel',
+    completed: false,
+    id: 0,
+  },
+];
+
 describe('todos reducer', () => {
   it('should return the initial state', () => {
-    expect(todosReducer(undefined, {})).toEqual([
-      {
-        text: 'Task Godel',
-        completed: true,
-        id: 0,
-      },
-    ]);
+    expect(todosReducer(undefined, {})).toEqual([]);
   });
 
   it('should handle ADD_TODO', () => {
-    const reducer = todosReducer([], {
+    const reducer = todosReducer(undefined, {
       type: 'todoAdd',
       payload: 'Run the tests',
     });
@@ -21,9 +23,9 @@ describe('todos reducer', () => {
     expect(reducer[0].completed).toBe(false);
   });
   it('should handle todos/todoToggle', () => {
-    const reducer = todosReducer(undefined, {
+    const reducer = todosReducer(initialState, {
       type: 'todos/todoToggle',
-      payload: '',
+      payload: 0,
     });
     expect(reducer[0].completed).toBe(true);
   });

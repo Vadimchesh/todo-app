@@ -1,8 +1,6 @@
 import { v4 } from 'uuid';
 
-const initialState = [{ id: 0, text: 'Task Godel', completed: true }];
-
-export default function todosReducer(state = initialState, action) {
+export default function todosReducer(state = [], action) {
   switch (action.type) {
     case 'todoAdd': {
       return [
