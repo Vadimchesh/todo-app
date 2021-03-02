@@ -8,9 +8,15 @@ const BottomControls = ({ value: status, onChange }) => {
     const handleClick = () => onChange(value);
 
     return (
-      <label className={styles.label} key={value}>
-        <input type='radio' name='bottom' />
-        <span onClick={handleClick}>{key}</span>
+      <label data-cy='filterLabel' className={styles.label} key={value}>
+        <input
+          defaultChecked={status.status === value}
+          type='radio'
+          name='bottom'
+        />
+        <span data-cy='filterName' onClick={handleClick}>
+          {key}
+        </span>
       </label>
     );
   });

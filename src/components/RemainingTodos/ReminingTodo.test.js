@@ -1,25 +1,15 @@
 import RemainingTodos from './RemainingTodos';
 import React from 'react';
-import renderer from 'react-test-renderer';
+import { shallow } from 'enzyme';
 
-// const setUp = (props) => shallow(<RemainingTodos {...props} />);
-let wrapper;
-beforeEach(() => {
-  wrapper = shallow(<RemainingTodos />);
-});
-
-describe('Remmaining todo coun:', () => {
-  it('should render one label', () => {
-    const label = wrapper.find('label');
-    expect(label.length).toBe(1);
-  });
-  it('should render count', () => {
-    const label = wrapper.find('label');
-    expect(label.text()).toBe(`items left`);
+describe('Title component', () => {
+  it('should render RemainingTodos component with props', () => {
+    const component = shallow(<RemainingTodos count='1' />);
+    expect(component).toMatchSnapshot();
   });
 
-  it('renders correctly', () => {
-    const tree = renderer.create(<RemainingTodos />);
-    expect(tree).toMatchSnapshot();
+  it('should render RemainingTodos component without props', () => {
+    const component = shallow(<RemainingTodos />);
+    expect(component).toMatchSnapshot();
   });
 });

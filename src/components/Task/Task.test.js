@@ -28,13 +28,11 @@ describe('Task:', () => {
 
   it('called toggle fn', () => {
     wrapper.find('.toggle').simulate('change');
-    expect(useDispatch).toBeCalled();
     expect(mockDispatch).toBeCalled();
   });
 
   it('called onDelete fn', () => {
     wrapper.find('#delete').simulate('click');
-    expect(useDispatch).toBeCalled();
     expect(mockDispatch).toBeCalled();
   });
 });

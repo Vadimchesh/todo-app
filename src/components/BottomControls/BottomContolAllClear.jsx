@@ -10,7 +10,11 @@ const BottomContolAllClear = (id) => {
 
   return (
     <label className={styles.label}>
-      <span id='clear' onClick={onClearCompletedClicked}>
+      <span
+        data-cy='clearAllComplited'
+        id='clear'
+        onClick={onClearCompletedClicked}
+      >
         Clear all complited
       </span>
     </label>

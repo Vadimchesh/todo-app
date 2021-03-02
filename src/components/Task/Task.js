@@ -15,9 +15,10 @@ const TodoListItem = ({ id, text, completed }) => {
   };
 
   return (
-    <label className={styles.label}>
+    <label data-cy='labelTaskText' className={styles.label}>
       <div className={styles.container}>
         <input
+          data-cy='toogleTask'
           className='toggle'
           type='checkbox'
           checked={completed}
@@ -25,16 +26,21 @@ const TodoListItem = ({ id, text, completed }) => {
         />
         <span className={styles.checkmark}></span>
         <span
+          data-cy='taskText'
           className={cn({
             [styles.done]: completed,
           })}
         >
           {text}
         </span>
-        <span id='delete' className={styles.close} onClick={onDelete}></span>
+        <span
+          data-cy='deleteBtn'
+          id='delete'
+          className={styles.close}
+          onClick={onDelete}
+        ></span>
       </div>
     </label>
   );
 };
-
 export default TodoListItem;

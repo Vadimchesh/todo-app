@@ -21,6 +21,7 @@ const ListTask = () => {
   const renderedListTasks = todos.map((todo) => {
     return (
       <Task
+        data-cy='oneTask'
         key={todo.id}
         id={todo.id}
         completed={todo.completed}

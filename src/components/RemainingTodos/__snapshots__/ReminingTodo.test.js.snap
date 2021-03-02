@@ -1,8 +1,23 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`Remmaining todo coun: renders correctly 1`] = `
-<label>
-  item
+exports[`Title component should render RemainingTodos component with props 1`] = `
+<label
+  className="labelCount"
+  data-cy="countItemLeft"
+>
+  1
+   item
+  s
+   left
+</label>
+`;
+
+exports[`Title component should render RemainingTodos component without props 1`] = `
+<label
+  className="labelCount"
+  data-cy="countItemLeft"
+>
+   item
   s
    left
 </label>

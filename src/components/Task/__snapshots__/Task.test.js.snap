@@ -3,12 +3,14 @@
 exports[`Task: snapshot 1`] = `
 <label
   className="label"
+  data-cy="labelTaskText"
 >
   <div
     className="container"
   >
     <input
       className="toggle"
+      data-cy="toogleTask"
       onChange={[Function]}
       type="checkbox"
     />
@@ -17,9 +19,11 @@ exports[`Task: snapshot 1`] = `
     />
     <span
       className=""
+      data-cy="taskText"
     />
     <span
       className="close"
+      data-cy="deleteBtn"
       id="delete"
       onClick={[Function]}
     />

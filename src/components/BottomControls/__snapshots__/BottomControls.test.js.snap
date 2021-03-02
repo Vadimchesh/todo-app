@@ -5,39 +5,48 @@ exports[`BottomControls: renders correctly 1`] = `
   className="styles.conainer"
 >
   <label
+    checked={false}
     className="label"
+    data-cy="filterLabel"
   >
     <input
       name="bottom"
       type="radio"
     />
     <span
+      data-cy="filterName"
       onClick={[Function]}
     >
       All
     </span>
   </label>
   <label
+    checked={false}
     className="label"
+    data-cy="filterLabel"
   >
     <input
       name="bottom"
       type="radio"
     />
     <span
+      data-cy="filterName"
       onClick={[Function]}
     >
       Active
     </span>
   </label>
   <label
+    checked={false}
     className="label"
+    data-cy="filterLabel"
   >
     <input
       name="bottom"
       type="radio"
     />
     <span
+      data-cy="filterName"
       onClick={[Function]}
     >
       Completed
