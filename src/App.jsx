@@ -1,20 +1,22 @@
+import React from 'react';
 import ListTask from './components/ListTask/ListTask';
+import BottomControls from './components/BottomControls//BottomControls';
 import AddTask from './components/AddTask/AddTask';
-import Footer from './components/Footer/Footer';
+import VisibleTaskList from './components/VisibleTaskList';
 import styles from './style.module.scss';
 
-function App() {
-  return (
-    <div className={styles.wrapper}>
-      <h1>todos</h1>
-      <div className={styles.content}>
-        <AddTask />
-        <ListTask />
-        <Footer />
-      </div>
-      <div className={styles.card1} />
-      <div className={styles.card2} />
+const App = () => (
+  <div className={styles.wrapper}>
+    <h1>todos</h1>
+    <div className={styles.content}>
+      <AddTask />
+      <VisibleTaskList />
+      <ListTask></ListTask>
+      <BottomControls />
     </div>
-  );
-}
+    <div className={styles.card1} />
+    <div className={styles.card2} />
+  </div>
+);
+
 export default App;

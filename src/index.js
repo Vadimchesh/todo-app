@@ -1,19 +1,16 @@
-import React from "react";
-import { render } from "react-dom";
-import { Provider } from "react-redux";
-import "./assets/scss/common.scss";
-import App from "./App";
-import reportWebVitals from "./reportWebVitals";
-import store from "./redux/store";
+import React from 'react';
+import './assets/scss/common.scss';
+import App from './App';
+import { render } from 'react-dom';
+import { createStore } from 'redux';
+import { Provider } from 'react-redux';
+import rootReducer from './reducers';
+
+const store = createStore(rootReducer);
 
 render(
   <Provider store={store}>
     <App />
   </Provider>,
-  document.getElementById("root")
+  document.getElementById('root')
 );
-
-// If you want to start measuring performance in your app, pass a function
-// to log results (for example: reportWebVitals(console.log))
-// or send to an analytics endpoint. Learn more: https://bit.ly/CRA-vitals
-reportWebVitals();
