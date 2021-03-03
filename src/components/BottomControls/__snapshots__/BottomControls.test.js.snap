@@ -5,11 +5,11 @@ exports[`BottomControls: renders correctly 1`] = `
   className="styles.conainer"
 >
   <label
-    checked={false}
     className="label"
     data-cy="filterLabel"
   >
     <input
+      defaultChecked={false}
       name="bottom"
       type="radio"
     />
@@ -21,11 +21,11 @@ exports[`BottomControls: renders correctly 1`] = `
     </span>
   </label>
   <label
-    checked={false}
     className="label"
     data-cy="filterLabel"
   >
     <input
+      defaultChecked={false}
       name="bottom"
       type="radio"
     />
@@ -37,11 +37,11 @@ exports[`BottomControls: renders correctly 1`] = `
     </span>
   </label>
   <label
-    checked={false}
     className="label"
     data-cy="filterLabel"
   >
     <input
+      defaultChecked={false}
       name="bottom"
       type="radio"
     />

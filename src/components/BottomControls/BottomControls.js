@@ -6,7 +6,6 @@ const BottomControls = ({ value: status, onChange }) => {
   const renderedFilters = Object.keys(StatusFilters).map((key) => {
     const value = StatusFilters[key];
     const handleClick = () => onChange(value);
-
     return (
       <label data-cy='filterLabel' className={styles.label} key={value}>
         <input

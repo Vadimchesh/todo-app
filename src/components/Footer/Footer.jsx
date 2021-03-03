@@ -14,7 +14,6 @@ const Footer = () => {
   });
 
   const status = useSelector((state) => state.filters);
-
   const onStatusChange = (status) =>
     dispatch({ type: 'FILTER', payload: status });
   return (

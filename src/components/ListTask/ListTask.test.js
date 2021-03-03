@@ -8,9 +8,9 @@ describe('ListTask:', () => {
   const mockStore = configureStore();
 
   const StatusFilters = {
-    All: 'Test',
-    Active: 'Test1',
-    Completed: 'Test2',
+    All: 'All',
+    Active: 'Active',
+    Completed: 'Active',
   };
 
   const initialState = {

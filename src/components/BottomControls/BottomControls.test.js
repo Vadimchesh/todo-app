@@ -2,7 +2,6 @@ import React from 'react';
 import BottomControls from './BottomControls';
 import renderer from 'react-test-renderer';
 import { shallow, ShallowWrapper } from 'enzyme';
-import { useDispatch } from 'react-redux';
 
 const mockDispatch = jest.fn();
 
